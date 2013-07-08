@@ -22,12 +22,12 @@ namespace :backup do
 
 		desc "Fetch log files from remote machine"
 		task :fetch do
-			Backup.new.fetch_files(path, path_to_report)
+			Backup.new.fetch_files(path)
 		end
 
 		desc "Organize files"
 		task :organize do
-			Backup.new.organize_files(path, path_to_report)
+			Backup.new.organize_files(path)
 		end
 
 		### Report

@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628075925) do
+ActiveRecord::Schema.define(:version => 20130703025937) do
 
   create_table "logs", :force => true do |t|
-    t.string   "entry",         :limit => 40000
+    t.string   "entry",        :limit => 40000
     t.datetime "occurred_at"
     t.string   "environment"
     t.integer  "error_status"
