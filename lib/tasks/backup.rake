@@ -13,6 +13,10 @@ namespace :backup do
 	end
 
 	namespace :remote do
+		task :all => ["retrieve", "report"] do
+			puts "Successfully finished retrieving logs."
+			puts "Successfully finished exporting reports."			
+		end
 
 		### Retrieve
 		desc "Retrieve logs from remote machine"

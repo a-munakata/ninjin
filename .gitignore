@@ -50,3 +50,5 @@ lib/extract-errors/conf
 
 /backup
 config/conf.yaml
+
+.DS_Store

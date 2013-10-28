@@ -37,7 +37,6 @@ module Report
 
 							decorate_data(dir_path, entry_sub, decorated, entries, usage, env)
 
-
 							date = DateTime.parse(file.match(/[0-9]{8}/).to_s)
 							day_before = date - 1
 
@@ -63,10 +62,15 @@ module Report
 	def extract_errors(entry, entry_sub, date)
 		if entry.match(/Completed\s[45]/)
 			
-			date = DateTime.parse(date.to_s)
-			validated_date = date.new_offset(9.0/24)
+			begin
+        date = DateTime.parse(date.to_s)
 
-			entry_sub << entry.to_s.sub(date.to_s(:timezone), validated_date.to_s(:timezone))
+        validated_date = date.new_offset(9.0/24)
+
+        entry_sub << entry.to_s.sub(date.to_s(:timezone), validated_date.to_s(:timezone))
+      rescue => e
+        e
+      end
 		end
 	end
 

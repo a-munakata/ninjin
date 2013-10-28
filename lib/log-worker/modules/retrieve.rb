@@ -41,7 +41,7 @@ module Retrieve
 	end
 
 	def secure_copy(val, target_files, dir_path, target_env)
-		Net::SCP.start(val["path"], val["user"], {:password => val["options"]}) do |scp|
+		Net::SCP.start(val["path"], val["user"], {:password => val["password"]}) do |scp|
 			target_files.each { |file|
 
 				unless File.exist?("#{dir_path}/#{target_env}")
