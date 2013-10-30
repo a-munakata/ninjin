@@ -60,7 +60,7 @@ module Report
 	end
 
 	def extract_errors(entry, entry_sub, date)
-		if entry.match(/Completed\s[45]/)
+		if entry.match(/Completed\s([45].{2})/) && $1 != "401"
 			
 			begin
         date = DateTime.parse(date.to_s)
