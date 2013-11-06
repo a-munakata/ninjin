@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703025937) do
+ActiveRecord::Schema.define(:version => 20131106083843) do
 
   create_table "logs", :force => true do |t|
     t.string   "entry",        :limit => 40000
@@ -25,5 +25,14 @@ ActiveRecord::Schema.define(:version => 20130703025937) do
   end
 
   add_index "logs", ["occurred_at", "environment", "error_status"], :name => "altered_logs_index", :unique => true
+
+  create_table "not_found_path_stores", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.datetime "occurred_at"
+    t.string   "path"
+    t.string   "ip_address"
+    t.string   "entry"
+  end
 
 end
