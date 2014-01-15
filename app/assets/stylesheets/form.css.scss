@@ -1,0 +1,67 @@
+/* Form::Checkbox */
+.checkbox_label {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	> input {
+		opacity: 0;	
+	}
+	> label > span {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;	
+	}
+	> span {
+		z-index: -1;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		width: 18px; 
+		height: 17px;
+		display: inline-block;
+		font-family: osaka;
+		background-image: image-url("sprite/icon-checkbox.png");
+	}
+}
+
+input:checked ~ div.checkbox_label > span {
+	background-image: image-url("sprite/icon-checkbox_ov.png");
+}
+input:checked ~ .issue {
+	display: block;
+}
+input:checked ~ pre {
+	max-height: 1000px !important;
+	display: block;
+}
+input:checked ~ pre.entry.part {
+	display:none;
+}
+
+/* Form::issue */
+.issue {
+	display: none;
+	margin-top: 15px;
+
+	input.submit {
+		display: none;	
+	}
+
+	input:first-child {
+		width: 30%;
+		margin-right: 70%;
+		height: 15px;	
+	}
+
+	input:nth-child(2) {
+			width: 30%;
+		margin-right: 70%;
+		height: 40px;
+		margin-bottom: 10px;
+	}
+}
